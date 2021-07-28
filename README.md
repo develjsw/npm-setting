@@ -241,7 +241,11 @@ http { <br>
 3. php-fpm 설정파일 수정
 > vi /etc/php-fpm.d/www.conf
 
-listen = 127.0.0.1:9000 으로 되어 있는 부분을 listen = /var/run/php-fpm/php-fpm.sock로 변경
+listen = 127.0.0.1:9000 으로 되어 있는 부분을 listen = /var/run/php-fpm/php-fpm.sock로 변경 <br>
+;listen.owner = nobody 부분을 listen.owner = nginx로 변경 <br>
+;listen.group = nobody 부분을 listen.group = nginx로 변경 <br>
+;listen.mode = 0660 부분을 주석해제 <br>
+
 > listen = /var/run/php-fpm/php-fpm.sock <br>
 listen.owner = nginx <br>
 listen.group = nginx <br>
